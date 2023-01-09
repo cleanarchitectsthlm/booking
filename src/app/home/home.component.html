@@ -23,7 +23,13 @@
         <label class="">Depart</label>
         <div class="input-group">
           <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-          <input class="form-control datepicker" placeholder="Please select date" type="text">
+          <!-- <input
+      type="text"
+      mwlFlatpickr
+      [(ngModel)]="selectedDate"
+      [altInput]="true"
+      [convertModelValue]="true"
+    /> -->
         </div>
       </div>
       <div class="col-lg-3 mt-lg-n2 mt-2">
@@ -36,81 +42,21 @@
 <section class="pt-7 pb-0 w-80 mx-auto my-0">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6">
+      <div class="col-lg-6 col-md-6" *ngFor="let item of apartments">
         <div class="card card-blog card-plain">
           <div class="position-relative">
             <a class="d-block blur-shadow-image">
-              <img src="../../assets/img/ap1.jpg" class="img-fluid shadow border-radius-lg">
+              <img src="{{item.picture}}" class="img-fluid shadow border-radius-lg">
             </a>
           </div>
           <div class="card-body px-1 pt-3">
             <a href="javascript:;">
               <h5>
-                From 100 € /night
+                {{item.header}}
               </h5>
             </a>
             <p>
-              Ground floor apartment, fitting families with children as there is more space to run around. Entrance from garden.
-            </p>
-            <button type="button" class="btn btn-outline-primary btn-sm">Select</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="card card-blog card-plain">
-          <div class="position-relative">
-            <a class="d-block blur-shadow-image">
-              <img src="../../assets/img/ap2.jpg" class="img-fluid shadow border-radius-lg">
-            </a>
-          </div>
-          <div class="card-body px-1 pt-3">
-            <a href="javascript:;">
-              <h5>
-                From 120 € /night
-              </h5>
-            </a>
-            <p>
-              First floor apartment, sea view across the whole apartment with two large balconies.
-            </p>
-            <button type="button" class="btn btn-outline-primary btn-sm">Select</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="card card-blog card-plain">
-          <div class="position-relative">
-            <a class="d-block blur-shadow-image">
-              <img src="../../assets/img/ap3.jpg" class="img-fluid shadow border-radius-lg">
-            </a>
-          </div>
-          <div class="card-body px-1 pt-3">
-            <a href="javascript:;">
-              <h5>
-                From 110 € /night
-              </h5>
-            </a>
-            <p>
-              Second floor apartment with beautiful wide sea view over Rukavac. 15+ sqm spacious balcony and high ceilings that give feeling of more space.
-            </p>
-            <button type="button" class="btn btn-outline-primary btn-sm">Select</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="card card-blog card-plain">
-          <div class="position-relative">
-            <a class="d-block blur-shadow-image">
-              <img src="../../assets/img/ap4.jpg" class="img-fluid shadow border-radius-lg">
-            </a>
-          </div>
-          <div class="card-body px-1 pt-3">
-            <a href="javascript:;">
-              <h5>
-                From 110 € /night
-              </h5>
-            </a>
-            <p>
-              Second floor apartment with beautiful loft. 12 sqm large balcony partial sea view over Rukavac. High ceilings that give feeling of more space.
+              {{item.description}}
             </p>
             <button type="button" class="btn btn-outline-primary btn-sm">Select</button>
           </div>

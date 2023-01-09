@@ -1,6 +1,8 @@
-const apartments = [
+export const APARTMENTS = [
   {
     title: "Gallery M1 groundfloor",
+    header: "From 100 € /night",
+    picture: "../../assets/img/ap1.jpg",
     images: [
       "../../assets/img/apartment_large/m1/visitaylinvis-apartment-m1-11.jpg",
       "../../assets/img/apartment_large/m1/visitaylinvis-apartment-m1-21.jpg",
@@ -16,6 +18,8 @@ const apartments = [
   },
   {
     title: "Gallery M2 floor 1",
+    header: "From 120 € /night",
+    picture: "../../assets/img/ap2.jpg",
     images: [
       "../../assets/img/apartment_large/m2/visitaylinvis-apartment-m2-21.jpg",
       "../../assets/img/apartment_large/m2/visitaylinvis-apartment-m2-31.jpg",
@@ -30,6 +34,8 @@ const apartments = [
   },
   {
     title: "Gallery M3 floor 2",
+    header: "From 110 € /night",
+    picture: "../../assets/img/ap3.jpg",
     images: [
       "../../assets/img/apartment_large/m3/visitaylinvis-apartment-m3-1.jpg",
       "../../assets/img/apartment_large/m3/visitaylinvis-apartment-m3-2.jpg",
@@ -45,6 +51,8 @@ const apartments = [
   },
   {
     title: "Gallery M4 floor 1",
+    header: "From 110 € /night",
+    picture: "../../assets/img/ap4.jpg",
     images: [
       "../../assets/img/apartment_large/m4/visitaylinvis-apartment-m4-11.jpg",
       "../../assets/img/apartment_large/m4/visitaylinvis-apartment-m4-21.jpg",
