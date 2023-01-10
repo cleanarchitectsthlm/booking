@@ -8,4 +8,5 @@ import { APARTMENTS } from '../data/apartments';
 })
 export class HomeComponent {
   apartments = APARTMENTS;
+  basicValue = '2023-01-01';
 }
