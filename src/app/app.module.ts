@@ -10,6 +10,14 @@ import { ExcursionsComponent } from './excursions/excursions.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { ContactusComponent } from './contactus/contactus.component';
 
+import { FormsModule } from '@angular/forms';
+import { FlatpickrModule } from 'angularx-flatpickr';
+
+@NgModule({
+  imports: [],
+})
+export class MyModule {}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +30,12 @@ import { ContactusComponent } from './contactus/contactus.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    FlatpickrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
