@@ -8,5 +8,9 @@ import { APARTMENTS } from '../data/apartments';
 })
 export class HomeComponent {
   apartments = APARTMENTS;
-  basicValue = '2023-01-01';
+  basicValue = '';
+  rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
 }
