@@ -12,9 +12,13 @@ import { ContactusComponent } from './contactus/contactus.component';
 
 import { FormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { ApartmentComponent } from './apartment/apartment.component';
 
 @NgModule({
   imports: [],
+  declarations: [
+    ApartmentComponent
+  ],
 })
 export class MyModule {}
 
