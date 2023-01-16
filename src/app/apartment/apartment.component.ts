@@ -7,5 +7,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./apartment.component.css']
 })
 export class ApartmentComponent {
-  constructor(private route: ActivatedRoute){}
+  public apartment: any;
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.apartment = this.route.snapshot.data['apartment'];
+  }
 }
