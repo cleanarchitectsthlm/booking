@@ -13,9 +13,12 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { FormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { ApartmentComponent } from './apartment/apartment.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  imports: [],
+  imports: [
+    NgbModule
+  ],
   declarations: [
     ApartmentComponent
   ],
@@ -36,7 +39,7 @@ export class MyModule {}
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FlatpickrModule.forRoot()
+    FlatpickrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
