@@ -1,8 +1,15 @@
 <div class="mt-7">
   <h3 class="mb-5 text-bold text-uppercase text-center">{{apartment.title}} </h3>
-  <img
-    src=""
-    alt=""
-  />
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let image of images">
+      <div class="wrapper">
+        <img [src]="image.src" alt="slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>{{ image.title }}</h3>
+        <p>{{ image.desc }}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
   <p class="w-80 text-justify mx-auto my-5">{{apartment.description}}</p>
 </div>
