@@ -14,10 +14,12 @@ import { FormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { ApartmentComponent } from './apartment/apartment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
   ],
   declarations: [
     ApartmentComponent
