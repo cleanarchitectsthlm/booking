@@ -13,3 +13,26 @@
   </ngb-carousel>
   <p class="w-80 text-justify mx-auto my-5">{{apartment.description}}</p>
 </div>
+<!-- <div class="col-lg-4 col-md-7 col-sm-6">
+  <div id="carousel" class="ml-auto mr-auto">
+    <div class="card page-carousel">
+      <ngb-carousel *ngIf="apartment.images">
+        <ng-template ngbSlide *ngFor="let pic of apartment.images">
+          <img class="d-block img-fluid" src="https://via.placeholder.com/300x200"
+            data-src="../../assets/img/apartment_large/{{pic.title}}" alt="Awesome Item">
+          <div class="carousel-caption d-none d-md-block">
+            <p>{{pic.description}}</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      <ngb-carousel *ngIf="!apartment.images.length">
+        <ng-template ngbSlide>
+          <img class="d-block img-fluid" src="https://via.placeholder.com/300x200" alt="Awesome Item">
+          <div class="carousel-caption d-none d-md-block">
+            <p></p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div> <!-- end carousel -->
+<!-- </div> --> -->
