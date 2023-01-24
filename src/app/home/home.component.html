@@ -45,17 +45,18 @@
 <section class="pt-7 pb-0 w-80 mx-auto my-0">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6" *ngFor="let item of apartments">
+      <!-- <div class="col-lg-6 col-md-6" *ngFor="let item of apartments"> -->
+        <div class="col-lg-6 col-md-6" *ngFor="let item of apartmentList">
         <div class="card card-blog card-plain">
           <div class="position-relative">
             <a class="d-block blur-shadow-image">
-              <img src="{{item.picture}}" class="img-fluid shadow border-radius-lg">
+              <img src="{{item.pictures}}" class="img-fluid shadow border-radius-lg">
             </a>
           </div>
           <div class="card-body px-1 pt-3">
             <a href="javascript:;">
               <h5>
-                {{item.header}}
+                {{item.name}}
               </h5>
             </a>
             <p>
