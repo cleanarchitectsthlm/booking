@@ -5,19 +5,21 @@ import { ExcursionsComponent } from './excursions/excursions.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ApartmentComponent } from './apartment/apartment.component';
-import { ApartmentResolverResolver } from './resolvers/apartment-resolver.resolver';
+// import { ApartmentResolverResolver } from './resolvers/apartment.resolver';
 import { HttpClientModule } from '@angular/common/http';
+import { ApartmentsResolver } from './resolvers/apartments.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    resolve: { apartmentList: ApartmentsResolver }
   },
   {
     path: 'apartment/:id',
     component: ApartmentComponent,
     resolve: {
-      apartment: ApartmentResolverResolver
+      // apartment: ApartmentResolverResolver
     }
   },
   {
@@ -37,6 +39,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes), HttpClientModule],
   exports: [RouterModule],
-  providers: [ApartmentResolverResolver]
+  providers: [ApartmentsResolver]
+  // providers: [ApartmentResolverResolver]
 })
 export class AppRoutingModule { }
