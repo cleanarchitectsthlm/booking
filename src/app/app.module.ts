@@ -15,6 +15,9 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { ApartmentComponent } from './apartment/apartment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ApartmentsResolver } from './resolvers/apartments.resolver';
+import { ApartmentService } from './Services/apartment.service';
+import { ConfigurationService } from './Services/configuration.service';
 
 @NgModule({
   imports: [
@@ -43,7 +46,11 @@ export class MyModule {}
     FormsModule,
     FlatpickrModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    ApartmentsResolver,
+    ApartmentService,
+    ConfigurationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
