@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApartmentModel } from '../models/apartment-model';
 import { HttpClient } from '@angular/common/http';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -20,12 +21,18 @@ export class HomeComponent {
   };
 
   constructor(private route: ActivatedRoute,
-    private router: Router, private http: HttpClient){}
+    private router: Router, private http: HttpClient, config: NgbCarouselConfig) {
+      // customize default values of carousels used by this component tree
+      config.interval = 10000;
+      config.wrap = false;
+      config.keyboard = false;
+    }
 
   ngOnInit(): void {
     this.sub = this.route.data
       .subscribe(value => {
-          this.apartmentList = value['apartmentList'];
+        this.apartmentList = value['apartmentList'];
+        console.log(this.apartmentList);
         }
       );
     // this.apartments = this.route.snapshot.data['apartments'];
