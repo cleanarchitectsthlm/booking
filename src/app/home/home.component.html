@@ -45,24 +45,54 @@
 <section class="pt-7 pb-0 w-80 mx-auto my-0">
   <div class="container">
     <div class="row">
-      <!-- <div class="col-lg-6 col-md-6" *ngFor="let item of apartments"> -->
-        <div class="col-lg-6 col-md-6" *ngFor="let item of apartmentList">
-        <div class="card card-blog card-plain">
-          <div class="position-relative">
-            <a class="d-block blur-shadow-image">
-              <img src="{{item.pictures}}" class="img-fluid shadow border-radius-lg">
-            </a>
+      <div class="row border border-light p-2 m-3 section-lightgray rounded" *ngFor="let item of apartmentList">
+        <div class="col-lg-4 col-md-7 col-sm-6">
+          <div id="carousel" class="ml-auto mr-auto">
+            <div class="card page-carousel">
+              <ngb-carousel *ngIf="item.pictures">
+                <ng-template ngbSlide *ngFor="let pic of item.pictures">
+                  <img class="d-block img-fluid" src="https://via.placeholder.com/300x200"
+                    data-src="../../assets/img/apartment_large/{{pic.name}}" alt="Awesome Item">
+                  <div class="carousel-caption d-none d-md-block">
+                    <p>{{pic.description}}</p>
+                  </div>
+                </ng-template>
+              </ngb-carousel>
+              <ngb-carousel *ngIf="!item.pictures.length">
+                <ng-template ngbSlide>
+                  <img class="d-block img-fluid" src="https://via.placeholder.com/300x200" alt="Awesome Item">
+                  <div class="carousel-caption d-none d-md-block">
+                    <p></p>
+                  </div>
+                </ng-template>
+              </ngb-carousel>
+            </div>
+          </div> <!-- end carousel -->
+        </div>
+        <div class="col-lg-8 col-md-5 col-sm-6">
+          <div class="col-12">
+            <h3 class="price">
+              <div *ngFor="let price of item.prices; let i = index; let first=first">
+                <div *ngIf="first">
+                  {{'From'}}
+                  <strong>
+                    {{price.priceEur}}&nbsp;&euro;
+                  </strong>
+                  /{{'Night'}}
+                </div>
+
+              </div>
+            </h3>
           </div>
-          <div class="card-body px-1 pt-3">
-            <a href="javascript:;">
-              <h5>
-                {{item.name}}
-              </h5>
-            </a>
-            <p>
-              {{item.description}}
-            </p>
-            <button type="button" class="btn btn-outline-primary btn-sm" (click)="goToApartment(item.apartmentId)">Select</button>
+          <div class="col-12 p-3">{{item.description}}</div>
+          <div class="col-md-8 col-sm-12 pull-left">
+            <span *ngFor="let eq of item.equipments" class="badge badge-pill badge-primary mr-1"
+              style="margin-right:5px;">{{eq.name}} </span>
+          </div>
+          <div class="col-md-4 col-sm-12 pull-right p-2">
+            <button class="btn btn-danger btn-block btn-round"
+              >{{'Select'}} &nbsp;
+              <i class="fa-duotone fa-square-chevron-right"></i></button>
           </div>
         </div>
       </div>
