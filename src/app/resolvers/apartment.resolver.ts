@@ -1,27 +1,17 @@
-// import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
-// import {
-//   Router, Resolve,
-//   ActivatedRouteSnapshot
-// } from '@angular/router';
-// import { APARTMENTS } from '../data/apartments';
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { Observable } from 'rxjs';
 
-// @Injectable(
-//   {
-//   providedIn: 'root'
-//   }
-// )
-// export class ApartmentResolverResolver implements Resolve<any> {
-//   constructor(private http: HttpClient) { }
+import { ApartmentModel } from '../models/apartment-model';
+import { ApartmentService } from '../Services/apartment.service';
 
-//   public mockApartments: Array<any> = APARTMENTS;
+@Injectable()
+export class ApartmentResolver implements Resolve<ApartmentModel> {
+  constructor(private apartmentService: ApartmentService) {}
 
-//   public getApartment(id: any): any {
-//     let apartment: any = this.mockApartments.find(apartment => apartment.apartmentId == id);
-//     return apartment;
-//   }
-//   resolve(route: ActivatedRouteSnapshot){
-//     let id: any = route.params['id'];
-//     return this.getApartment(id);
-//   }
-// }
+  resolve(route: ActivatedRouteSnapshot): Observable<ApartmentModel> {
+    let id: number;
+    id = route.params['id'];
+    return this.apartmentService.getApartment(id);
+  }
+}
