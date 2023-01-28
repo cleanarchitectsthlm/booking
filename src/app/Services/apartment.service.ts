@@ -11,8 +11,14 @@ interface IApartmentService {
 export class ApartmentService implements IApartmentService {
 
   constructor(private httpService: HttpClient, private configurationService: ConfigurationService) { }
+
   public getApartments(): Observable<ApartmentModel[]> {
     return this.httpService
       .get<ApartmentModel[]>(this.configurationService.baseApiFnUrl + 'apartments');
+  }
+
+  public getApartment(id: number): Observable<ApartmentModel> {
+    return this.httpService
+      .get<ApartmentModel>(this.configurationService.baseApiFnUrl + 'apartment/' + id);
   }
 }
