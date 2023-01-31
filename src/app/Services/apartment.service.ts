@@ -6,6 +6,7 @@ import { ConfigurationService } from './configuration.service';
 
 interface IApartmentService {
   getApartments(): Observable<ApartmentModel[]>;
+  getApartment(id: number): Observable<ApartmentModel>;
 }
 @Injectable()
 export class ApartmentService implements IApartmentService {
