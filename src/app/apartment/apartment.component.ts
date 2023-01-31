@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { ApartmentModel } from '../models/apartment-model';
+import { SessionService } from '../Services/session.service';
 
 @Component({
   selector: 'app-apartment',
@@ -8,19 +9,17 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./apartment.component.css']
 })
 export class ApartmentComponent {
-  public apartment: any;
-  title = 'angular-app';
-  images = [
-    {title: 'First Slide', desc: 'First Slide Description', src: "https://picsum.photos/id/102/900/500"},
-    {title: 'Second Slide', desc: 'Second Slide Description', src: "https://picsum.photos/id/1020/900/500"},
-    {title: 'Third Slide', desc: 'Third Slide Description', src: "https://picsum.photos/id/1024/900/500"}
-  ];
-  constructor(private route: ActivatedRoute, config: NgbCarouselConfig) {
-    config.interval = 2000;
-    config.keyboard = true;
-    config.pauseOnHover = true;
-  }
+  public apartment: ApartmentModel;
+  private sub: any;
+
+  constructor(private route: ActivatedRoute, public sessionService: SessionService) {}
   ngOnInit(): void {
-    this.apartment = this.route.snapshot.data['apartment'];
+    this.sub = this.route.data
+      .subscribe(value => {
+        this.sessionService.session.apartmentSelected = value['apartmentSelected'];
+        console.log(this.sessionService.session.apartmentSelected);
+
+      }
+    )
   }
 }
