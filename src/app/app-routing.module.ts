@@ -5,9 +5,9 @@ import { ExcursionsComponent } from './excursions/excursions.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ApartmentComponent } from './apartment/apartment.component';
-// import { ApartmentResolverResolver } from './resolvers/apartment.resolver';
 import { HttpClientModule } from '@angular/common/http';
 import { ApartmentsResolver } from './resolvers/apartments.resolver';
+import { ApartmentResolver } from './resolvers/apartment.resolver';
 
 const routes: Routes = [
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'apartment/:id',
     component: ApartmentComponent,
     resolve: {
-      // apartment: ApartmentResolverResolver
+      apartmentSelected: ApartmentResolver
     }
   },
   {
@@ -39,7 +39,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes), HttpClientModule],
   exports: [RouterModule],
-  providers: [ApartmentsResolver]
-  // providers: [ApartmentResolverResolver]
+  providers: [ApartmentsResolver, ApartmentResolver]
 })
 export class AppRoutingModule { }
