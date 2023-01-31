@@ -55,7 +55,7 @@ export class HomeComponent {
     });
   }
 
-  public goToApartment(apartmentId: number) {
-    this.router.navigate([`/apartment/${apartmentId}`]);
-  }
+  goToApartment(item: any) {
+    this.router.navigate(['apartment', item.apartmentId]);
+}
 }
