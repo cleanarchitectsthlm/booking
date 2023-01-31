@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApartmentsResolver } from './resolvers/apartments.resolver';
 import { ApartmentService } from './Services/apartment.service';
 import { ConfigurationService } from './Services/configuration.service';
+import { SessionService } from './Services/session.service';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ export class MyModule {}
   providers: [
     ApartmentsResolver,
     ApartmentService,
-    ConfigurationService
+    ConfigurationService,
+    SessionService
   ],
   bootstrap: [AppComponent]
 })
