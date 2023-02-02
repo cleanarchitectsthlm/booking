@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Directive, Component, HostListener, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApartmentModel } from '../models/apartment-model';
 import { SessionService } from '../Services/session.service';
@@ -8,11 +8,16 @@ import { SessionService } from '../Services/session.service';
   templateUrl: './apartment.component.html',
   styleUrls: ['./apartment.component.css']
 })
+
 export class ApartmentComponent {
   public apartment: ApartmentModel;
   private sub: any;
 
-  constructor(private route: ActivatedRoute, public sessionService: SessionService) {}
+  constructor(private route: ActivatedRoute, public sessionService: SessionService, private el: ElementRef) { }
+  @HostListener('click')
+    imageChange(){
+      console.log(this.el.nativeElement)
+    }
   ngOnInit(): void {
     this.sub = this.route.data
       .subscribe(value => {
