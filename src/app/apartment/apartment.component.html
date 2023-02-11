@@ -2,13 +2,13 @@
   <h1 class="text-center text-bold"><strong>{{sessionService.session.apartmentSelected.name}}</strong>(floor {{sessionService.session.apartmentSelected.floor}})</h1>
   <p class="w-80 mx-auto my-5">{{sessionService.session.apartmentSelected.description}}</p>
 </div>
-<section class="gallery">
+<section class="gallery" style="height: 700px;">
   <div class="container">
     <div class="img-container" >
       <img data-src="../../assets/img/apartment_large/{{sessionService.session.apartmentSelected.pictures[0].name}}" alt="{{sessionService.session.apartmentSelected.pictures[0].name}}"/>
       <div class="img-prev text-center">
         <div class="img-slide active" *ngFor="let item of sessionService.session.apartmentSelected.pictures">
-          <img data-src="../../assets/img/apartment_large/{{item.name}}" alt="{{item.name}}" app-apartment>
+          <img data-src="../../assets/img/apartment_large/{{item.name}}" alt="{{item.name}}" >
         </div>
       </div>
     </div>
