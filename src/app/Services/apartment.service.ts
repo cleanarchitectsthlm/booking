@@ -22,4 +22,9 @@ export class ApartmentService implements IApartmentService {
     return this.httpService
       .get<ApartmentModel>(this.configurationService.baseApiFnUrl + 'apartment/' + id);
   }
+
+  public searchAvailable(c_in: any, c_out: any): Observable<ApartmentModel[]> {
+    return this.httpService
+      .get<ApartmentModel[]>(this.configurationService.baseApiFnUrl + 'search?checkin=' + c_in + '&checkout=' + c_out);
+  }
 }
