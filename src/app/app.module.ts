@@ -19,6 +19,7 @@ import { ApartmentsResolver } from './resolvers/apartments.resolver';
 import { ApartmentService } from './Services/apartment.service';
 import { ConfigurationService } from './Services/configuration.service';
 import { SessionService } from './Services/session.service';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { SessionService } from './Services/session.service';
     BrowserAnimationsModule,
   ],
   declarations: [
-    ApartmentComponent
+    ApartmentComponent,
+    SearchComponent
   ],
 })
 export class MyModule {}
