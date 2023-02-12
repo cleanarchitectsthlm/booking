@@ -8,6 +8,7 @@ import { ApartmentComponent } from './apartment/apartment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApartmentsResolver } from './resolvers/apartments.resolver';
 import { ApartmentResolver } from './resolvers/apartment.resolver';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
     resolve: {
       apartmentSelected: ApartmentResolver
     }
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   },
   {
     path: 'excursions',
