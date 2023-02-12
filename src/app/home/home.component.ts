@@ -63,9 +63,11 @@ export class HomeComponent {
   }
 
   onSearch() {
+    console.log("hello!")
     if (!this.isValidDate(this.checkinDate) || !this.isValidDate(this.checkoutDate)) {
       return;
     }
+
 
     // Set our navigation extras object
     // that contains our global query params and fragment
