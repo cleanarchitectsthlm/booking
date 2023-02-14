@@ -19,6 +19,12 @@ export class SearchComponent implements OnInit {
   checkinDateControl: UntypedFormControl;
   checkoutDateControl: UntypedFormControl;
 
+  basicValue = '';
+  rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
+
   constructor(private route: ActivatedRoute, private router: Router, private apartmentService: ApartmentService) {}
 
   ngOnInit() {
