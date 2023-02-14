@@ -21,16 +21,6 @@ import { ConfigurationService } from './Services/configuration.service';
 import { SessionService } from './Services/session.service';
 import { SearchComponent } from './search/search.component';
 
-@NgModule({
-  imports: [
-    NgbModule,
-    BrowserAnimationsModule,
-  ],
-  declarations: [
-    ApartmentComponent,
-    SearchComponent
-  ],
-})
 export class MyModule {}
 
 @NgModule({
@@ -41,14 +31,18 @@ export class MyModule {}
     FooterComponent,
     ExcursionsComponent,
     TransferComponent,
-    ContactusComponent
+    ContactusComponent,
+    ApartmentComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     FlatpickrModule.forRoot(),
-    NgbCarouselModule
+    NgbCarouselModule,
+    NgbModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     ApartmentsResolver,
