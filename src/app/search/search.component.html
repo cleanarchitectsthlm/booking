@@ -1,5 +1,5 @@
-<div id="wrapper">
-  <div class="page-header" [ngClass]="{'page-header-xs': apartmentList}"
+<div id="wrapper" class="mt-5">
+  <div class="page-header justify-content-center" [ngClass]="{'page-header-xs': apartmentList}"
     style="background-image: url('./assets/img/sections/teplus_air.JPG');">
     <div class="filter"></div>
     <div class="content-center">
@@ -7,30 +7,32 @@
         <div class="row">
           <div class="col-md-10 ml-auto mr-auto text-center" *ngIf="!apartmentList">
             <h1 class="title">{{'BookNextVacation'}}</h1>
+            <h1>Book Next Vacation</h1>
             <h5 class="description">{{'FindAvailableApartment'}}</h5>
             <br />
           </div>
           <div class="col-md-8 ml-auto mr-auto">
             <div class="card card-raised card-form-horizontal no-transition">
-              <div class="card-body">
+              <div class="card-body w-100">
                 <form method="" action="">
                   <div class="row">
-                    <div class="col-md-4">
-                      <!-- <mat-form-field>
-                        <input matInput [matDatepicker]="checkinDate" [min]="minDate" [formControl]="checkinDateControl"
-                          (dateChange)="dateChanged('checkin', $event)" placeholder="{{'Check_in' | translate}}">
-                        <mat-datepicker-toggle matSuffix [for]="checkinDate"></mat-datepicker-toggle>
-                        <mat-datepicker #checkinDate></mat-datepicker>
-                      </mat-form-field> -->
-                    </div>
-                    <div class="col-md-4">
-                      <!-- <mat-form-field>
-                        <input matInput [matDatepicker]="checkoutDate" [formControl]="checkoutDateControl"
-                          placeholder="{{'Check_out' | translate}}" (dateChange)="dateChanged('checkout', $event)">
-                        <mat-datepicker-toggle matSuffix [for]="checkoutDate"></mat-datepicker-toggle>
-                        <mat-datepicker #checkoutDate></mat-datepicker>
-                      </mat-form-field> -->
-                    </div>
+                        <div class="col-lg-5 mt-lg-n2 mt-2">
+                          <label class="">Depart</label>
+                          <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            <input
+                              class="form-control"
+                              type="text"
+                              mwlFlatpickr
+                              [(ngModel)]="rangeValue"
+                              [altInput]="true"
+                              [convertModelValue]="true"
+                              mode="range"
+                            >
+                          </div>
+                        </div>
+
+
                     <div class="col-md-3">
                       <button type="button" class="btn btn-danger btn-block" (click)="onSearch()">
                         <span *ngIf="isWorking; else searchButton">
