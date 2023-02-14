@@ -25,6 +25,7 @@ export class HomeComponent {
     to: (new Date() as any)['fp_incr'](10)
   };
 
+
   private reviewResources$: Subject<ReviewModel[]> = new Subject();
   reviews: Observable<ReviewModel[]> | null = null;
   reviewList: ReviewModel[];
@@ -64,10 +65,11 @@ export class HomeComponent {
 
   onSearch() {
     console.log("hello!")
+    this.checkinDate = this.rangeValue.from;
+    this.checkoutDate = this.rangeValue.to;
     if (!this.isValidDate(this.checkinDate) || !this.isValidDate(this.checkoutDate)) {
       return;
     }
-
 
     // Set our navigation extras object
     // that contains our global query params and fragment
