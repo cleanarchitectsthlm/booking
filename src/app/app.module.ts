@@ -20,6 +20,7 @@ import { ApartmentService } from './Services/apartment.service';
 import { ConfigurationService } from './Services/configuration.service';
 import { SessionService } from './Services/session.service';
 import { SearchComponent } from './search/search.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 export class MyModule {}
 
@@ -33,7 +34,8 @@ export class MyModule {}
     TransferComponent,
     ContactusComponent,
     ApartmentComponent,
-    SearchComponent
+    SearchComponent,
+    ReservationsComponent
   ],
   imports: [
     BrowserModule,

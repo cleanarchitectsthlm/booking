@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApartmentsResolver } from './resolvers/apartments.resolver';
 import { ApartmentResolver } from './resolvers/apartment.resolver';
 import { SearchComponent } from './search/search.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'contactus',
     component: ContactusComponent
+  },
+  {
+    path: 'reservations',
+    component: ReservationsComponent
   }
 ];
 
