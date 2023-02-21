@@ -1,4 +1,4 @@
-import { Directive, Component, HostListener, ElementRef } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApartmentModel } from '../models/apartment-model';
 import { SessionService } from '../Services/session.service';
