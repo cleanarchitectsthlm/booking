@@ -15,7 +15,7 @@ export class ReservationsComponent implements OnInit {
   private reservationResources: Subject<Reservation[]> = new Subject();
   reservations: Observable<Reservation[]> | null = null;
   reservationList: Reservation[];
-  public days: string[];
+  public dateArr: string[];
 
   constructor( private route: ActivatedRoute, private reservationsService: ReservationsService) { }
   ngOnInit(): void {
@@ -29,26 +29,19 @@ export class ReservationsComponent implements OnInit {
       console.log(this.reservationList)
     });
 
-    const getDaysByMonth = (month: any) => {
-      const daysInJune = moment(month).daysInMonth();
-      const arrayOfDays = Array.from({ length: daysInJune }, (v, k) => k + 1)
-      return arrayOfDays
-    };
+    var startDate = new Date('2023-06-01');
+    var endDate = new Date('2023-09-30');
+    var getDateArray = function(start: any, end: any) {
+      var arr = new Array();
+      var dt = new Date(start);
+      while (dt <= end) {
+        arr.push(new Date(dt));
+        dt.setDate(dt.getDate() + 1);
+      }
+      return arr;
+    }
 
-    const daysInJune = `${getDaysByMonth('2023-06')}`;
-    const daysInJuly = `${getDaysByMonth('2023-07')}`;
-    this.days = [daysInJune, daysInJuly];
-    console.log(this.days)
-    // let month = '2023-06';
-    // console.log(`June => ${getDaysByMonth('2023-06')}`);
-
-    // month = '2023-07';
-    // console.log(`July => ${getDaysByMonth(month)}`);
-
-    // month = '2023-08';
-    // console.log(`August => ${getDaysByMonth(month)}`);
-
-    // month = '2023-09';
-    // console.log(`September => ${getDaysByMonth(month)}`);
+    this.dateArr = getDateArray(startDate, endDate);
+    console.log(this.dateArr)
   }
 }
