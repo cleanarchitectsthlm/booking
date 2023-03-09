@@ -29,8 +29,8 @@ export class ReservationsComponent implements OnInit {
       console.log(this.reservationList)
     });
 
-    var startDate = new Date('2023-06-01');
-    var endDate = new Date('2023-09-30');
+    var startDate = new Date('2023/06/01');
+    var endDate = new Date('2023/09/30');
     var getDateArray = function(start: any, end: any) {
       var arr = new Array();
       var dt = new Date(start);
@@ -42,6 +42,6 @@ export class ReservationsComponent implements OnInit {
     }
 
     this.dateArr = getDateArray(startDate, endDate);
-    console.log(this.dateArr)
+    console.log(this.dateArr.toLocaleString())
   }
 }
