@@ -17,16 +17,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td >
-                      <div class="d-flex px-2" *ngFor="let date of dateArr">
+                  <tr  *ngFor="let date of dateArr">
+                    <td>
+                      <div class="d-flex px-2">
                         <div class="my-auto" >
                           <h6 class="mb-0 text-xs">{{date.toLocaleString()}}</h6>
                         </div>
                       </div>
                     </td>
                     <td *ngFor="let item of reservationList">
-                      <p class="text-xs font-weight-bold mb-0" *ngIf=""></p>
+                      <p class="text-xs font-weight-bold mb-0"></p>
                     </td>
                   </tr>
                 </tbody>
