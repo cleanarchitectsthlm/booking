@@ -4,6 +4,7 @@ import { Reservation } from '../models/reservation-model';
 import { ReservationsService } from '../Services/reservations.service';
 import { Observable, Subject } from 'rxjs';
 import * as moment from 'moment';
+import { BookingResevations } from '../models/Dtos/booking-reservationsDto';
 
 @Component({
   selector: 'app-reservations',
@@ -12,10 +13,10 @@ import * as moment from 'moment';
 })
 export class ReservationsComponent implements OnInit {
   private sub: any;
-  private reservationResources: Subject<Reservation[]> = new Subject();
-  reservations: Observable<Reservation[]> | null = null;
-  reservationList: Reservation[];
-  public dateArr: string[];
+  private reservationResources: Subject<BookingResevations> = new Subject();
+  reservations: Observable<BookingResevations> | null = null;
+  reservationList: BookingResevations;
+  public seasonDates: string[];
 
   constructor( private route: ActivatedRoute, private reservationsService: ReservationsService) { }
   ngOnInit(): void {
@@ -41,7 +42,7 @@ export class ReservationsComponent implements OnInit {
       return arr;
     }
 
-    this.dateArr = getDateArray(startDate, endDate);
-    console.log(this.dateArr.toLocaleString())
+    this.seasonDates = getDateArray(startDate, endDate);
+    console.log(this.seasonDates.toLocaleString())
   }
 }
