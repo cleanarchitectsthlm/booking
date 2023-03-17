@@ -15,7 +15,7 @@ export class ReservationsComponent implements OnInit {
   private sub: any;
   private reservationResources: Subject<BookingResevations> = new Subject();
   reservations: Observable<BookingResevations> | null = null;
-  reservationList: BookingResevations;
+  reservationList: BookingResevations | null | any;
   public seasonDates: string[];
 
   constructor( private route: ActivatedRoute, private reservationsService: ReservationsService) { }
@@ -30,8 +30,8 @@ export class ReservationsComponent implements OnInit {
       console.log(this.reservationList)
     });
 
-    var startDate = new Date('2023/06/01');
-    var endDate = new Date('2023/09/30');
+    var startDate = new Date('2021/06/01');
+    var endDate = new Date('2021/09/30');
     var getDateArray = function(start: any, end: any) {
       var arr = new Array();
       var dt = new Date(start);
@@ -44,5 +44,20 @@ export class ReservationsComponent implements OnInit {
 
     this.seasonDates = getDateArray(startDate, endDate);
     console.log(this.seasonDates.toLocaleString())
+
+  }
+
+  getApartmentName(apartmentId: number) {
+    if (apartmentId == 2) { return "M1" }
+    else if (apartmentId == 3) { return "M2" }
+    else if (apartmentId == 4) { return "M3" }
+    else { return "M4" }
+  }
+
+  checkIfDateIsOccupied(date: any, apartmentReservations: Reservation[]) {
+    // debugger;
+    const currentDate = new Date(date).getTime();
+    // console.log(currentDate.toLocaleDateString())
+    return !!apartmentReservations.find(item => new Date(item.occupiedDate).getTime() === currentDate);
   }
 }
