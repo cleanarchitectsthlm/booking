@@ -23,7 +23,6 @@
                       </div>
                     </td>
                     <td *ngFor="let item of reservationList">
-
                       <p class="text-xs font-weight-bold mb-0" [ngClass]="{'red' : checkIfDateIsOccupied(seasonDate, item.reservations) == true, 'green' : checkIfDateIsOccupied(seasonDate, item.reservations) == false}">{{checkIfDateIsOccupied(seasonDate, item.reservations)}}</p>
                     </td>
                   </tr>
