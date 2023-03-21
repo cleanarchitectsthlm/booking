@@ -27,7 +27,7 @@ export class ReservationsComponent implements OnInit {
     this.reservations = this.reservationResources;
     this.reservations.subscribe(reservation => {
       this.reservationList = reservation;
-      console.log(this.reservationList)
+      // console.log(this.reservationList)
     });
 
     var startDate = new Date('2021/06/01');
@@ -43,7 +43,7 @@ export class ReservationsComponent implements OnInit {
     }
 
     this.seasonDates = getDateArray(startDate, endDate);
-    console.log(this.seasonDates.toLocaleString())
+    // console.log(this.seasonDates.toLocaleString())
 
   }
 
