@@ -16,23 +16,22 @@
               <div class="card-body w-100">
                 <form method="" action="">
                   <div class="row">
-                        <div class="col-lg-5 mt-lg-n2 mt-2">
-                          <label class="">Depart</label>
-                          <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                            <input
-                              class="form-control"
-                              type="text"
-                              mwlFlatpickr
-                              [(ngModel)]="rangeValue"
-                              [altInput]="true"
-                              [convertModelValue]="true"
-                              mode="range"
-                            >
-                          </div>
-                        </div>
-
-
+                    <div class="col-lg-5 mt-lg-n2 mt-2">
+                      <label class="">Depart</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                        <input
+                          class="form-control"
+                          type="text"
+                          mwlFlatpickr
+                          [(ngModel)]="rangeValue"
+                          [altInput]="true"
+                          [convertModelValue]="true"
+                          name = "date"
+                          mode="range"
+                        >
+                      </div>
+                    </div>
                     <div class="col-md-3">
                       <button type="button" class="btn btn-danger btn-block" (click)="onSearch()">
                         <span *ngIf="isWorking; else searchButton">
