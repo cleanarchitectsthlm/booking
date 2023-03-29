@@ -1,4 +1,4 @@
-.red, .green {
+.red, .green, .blue {
   width: 15px;
   border-radius: 50%;
   text-indent: 100%;
@@ -11,4 +11,7 @@
 }
 .green {
   background-color: green;
+}
+.blue {
+  background-color: blue;
 }
