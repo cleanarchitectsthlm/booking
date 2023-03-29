@@ -60,4 +60,10 @@ export class ReservationsComponent implements OnInit {
     // console.log(currentDate.toLocaleDateString())
     return !!apartmentReservations.find(item => new Date(item.occupiedDate).getTime() === currentDate);
   }
+  checkIfCheckoutDateIsTrue(date: any, apartmentReservations: Reservation[]) {
+    // debugger;
+    const currentDate = new Date(date).getTime();
+    // console.log(currentDate.toLocaleDateString())
+    return !!apartmentReservations.find(item => new Date(item.occupiedDate).getTime() === currentDate && item.isCheckoutDate === true);
+  }
 }
